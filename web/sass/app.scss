@@ -1,0 +1,127 @@
+/* app css stylesheet */
+@import 'bootstrap';
+@import 'bootstrap-paper.min';
+
+/*
+  Loginbox component
+*/
+#Loginbox {
+  margin:20px 0;
+
+  .loginStateSwitch {
+    padding: 10px 15px 0 15px;
+    margin: 0;
+    
+    a {
+      cursor:pointer;
+    }
+  }
+
+  .input-group {
+    margin:5px 0;
+  }
+
+  @media (min-width: 768px) {
+    .input-group {
+      margin:0;
+    }
+  }
+}
+
+/*
+Main navigation
+*/
+#Navigation {
+  .navbar-brand {
+    color:#DD0000;
+  }
+}
+
+/*
+  Main view
+*/
+#mainView {
+  min-height:600px;
+  border-bottom:1px solid #ccc;
+
+  h1 {
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+#giftManagement {
+  .form-group {
+    margin-bottom:0;
+  }
+}
+
+/*
+   Gift list
+*/
+#giftList {
+  -moz-column-count: 1;
+  -webkit-column-count: 1;
+  column-count: 1;
+}
+
+@media (min-width: 480px) {
+  #giftList {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media (min-width: 768px) {
+  #giftList {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+  }
+}
+
+.gift-item {
+  display: inline-block;
+  width: 100%;
+}
+
+.gift-item-ie {
+  width:33%;
+  float:left;
+  padding:10px;
+}
+
+/*
+  Main Footer
+*/
+#appFooter {
+
+  text-align:center;
+
+  padding:20px 0;
+
+  li {
+    display:inline;
+  }
+
+  li:first-child {
+    list-style: none;
+  }
+}
+
+/*
+  Need to login component
+*/
+#needLogin {
+  margin:20px 0;
+}
+
+a {
+  white-space: pre-wrap; /* css-3 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+}

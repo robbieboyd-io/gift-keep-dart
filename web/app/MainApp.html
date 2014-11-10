@@ -1,0 +1,22 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="packages/polymer/polymer.html">
+<link rel="import" href="views/loginbox/LoginBox.html">
+<link rel="import" href="views/navigation/Navigation.html">
+<link rel="import" href="views/footer/Footer.html">
+
+<polymer-element name="giftkeep-main-app">
+  <template>
+    <link rel="stylesheet" href="/css/app.css"/>
+    <div>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <giftkeep-loginbox></giftkeep-loginbox>
+        </div>
+      </nav>
+      <giftkeep-navigation></giftkeep-navigation>
+      <giftkeep-footer></giftkeep-footer>
+    </div>
+  </template>
+  <script type="application/dart" src="MainApp.dart"></script>
+</polymer-element>
+
