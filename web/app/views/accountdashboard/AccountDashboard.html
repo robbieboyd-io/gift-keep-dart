@@ -1,5 +1,9 @@
 <!-- import polymer-element's definition -->
 <link rel="import" href="packages/polymer/polymer.html">
+<link rel="import" href="../../components/changepassword/ChangePassword.html">
+<link rel="import" href="../../components/removeaccount/RemoveAccount.html">
+<link rel="import" href="../../components/giftmanagement/GiftManagement.html">
+<link rel="import" href="../../components/rsvplist/RSVPList.html">
 
 <polymer-element name="giftkeep-account-dashboard">
   <template>
@@ -11,53 +15,22 @@
       </div>
       <div class="row">
           <div class="col-md-6 col-lg-6">
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <h3 class="panel-title">Change my password</h3>
-                  </div>
-                  <div class="panel-body">
-                      <!--<ng-template ng-if="updatedSuccessfully">
-                          <div class="alert alert-success" role="alert">Password changed successfully</div>
-                      </ng-template>
-                      <ng-template ng-if="passwordChangeErrorMessage.length > 0">
-                          <div class="alert alert-warning" role="alert">{{passwordChangeErrorMessage}}</div>
-                      </ng-template>-->
-  
-  
-                      <div class="input-group" id="emailAddressGroup">
-                          <span class="input-group-addon">Email address</span>
-                          <input type="email" class="form-control" placeholder="" id="emailAddress">
-                      </div>
-                      <br/>
-                      <div class="input-group" id="oldPassGroup">
-                          <span class="input-group-addon">Old password</span>
-                          <input type="password" class="form-control" placeholder="" id="oldPass">
-                      </div>
-                      <br/>
-                      <div class="input-group" id="newPassGroup">
-                          <span class="input-group-addon">New password</span>
-                          <input type="password" class="form-control" placeholder="" id="newPass">
-                      </div>
-                      <br/>
-                      <button class="btn btn-sm btn-default" ng-click="clickChangePassword()">Change password</button>
-                  </div>
-              </div>
+              <giftkeep-changepassword></giftkeep-changepassword>
           </div>
           <div class="col-md-6 col-lg-6">
-              <!--<div ng-include src="'/partials/components/general/RemoveAccount.html'"></div>-->
+              <giftkeep-removeaccount></giftkeep-removeaccount>
           </div>
-          <!--
-          <ng-template ng-if="isAdmin">
-              <div class="col-md-12 col-lg-12">
-                  <div ng-include src="'/partials/components/admin/GiftManagement.html'"></div>
-              </div>
-          </ng-template>
-          <ng-template ng-if="isAdmin">
-              <div class="col-md-12 col-lg-12">
-                  <div ng-include src="'/partials/components/admin/RSVPList.html'"></div>
-              </div>
-          </ng-template>
-          -->
+          
+          <template if="{{model.isAdmin}}">
+            <div class="col-md-12 col-lg-12">
+                <giftkeep-giftmanagement></giftkeep-giftmanagement>
+            </div>
+          </template>
+          <template if="{{model.isAdmin}}">
+            <div class="col-md-12 col-lg-12">
+              <giftkeep-rsvplist></giftkeep-rsvplist>
+            </div>
+          </template>
       </div>
   </template>
   <script type="application/dart" src="AccountDashboard.dart"></script>

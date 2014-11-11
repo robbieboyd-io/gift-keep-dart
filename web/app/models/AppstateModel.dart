@@ -6,6 +6,7 @@ class AppstateModel extends ObservableMap
 {
   @published String viewState = 'welcome';
   @published bool isLoggedIn = false;
+  @published bool isAdmin = true;
   
   AppstateModel()
   {
