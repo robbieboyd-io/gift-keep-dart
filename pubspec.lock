@@ -77,6 +77,10 @@ packages:
     description: pool
     source: hosted
     version: "1.0.1"
+  route_hierarchical:
+    description: route_hierarchical
+    source: hosted
+    version: "0.6.1"
   smoke:
     description: smoke
     source: hosted

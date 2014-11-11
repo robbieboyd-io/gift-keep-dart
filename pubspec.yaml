@@ -4,6 +4,7 @@ dependencies:
   bootjack: any
   firebase: any
   polymer: '>=0.12.0 <0.13.0'
+  route_hierarchical: any
 transformers:
 - polymer:
     entry_points: web/giftkeep.html

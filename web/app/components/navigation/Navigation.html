@@ -17,15 +17,15 @@
                 </button>
                 <a class="navbar-brand" href="#/welcome"><span class="glyphicon glyphicon-heart"></span></a>
             </div>
-
+            
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li ng-class="{active:isActive('/welcome')}"><a href="#/welcome">Welcome</a></li>
-                    <li ng-class="{active:isActive('/rsvp')}"><a href="#/rsvp"><strong>RSVP</strong></a></li>
-                    <li ng-class="{active:isActive('/gifts')}"><a href="#/gifts">Gifts ideas</a></li>
-                    <li ng-class="{active:isActive('/venue')}"><a href="#/venue">Venue</a></li>
-                    <li ng-if="isLoggedIn" ng-class="{active:isActive('/account-details')}"><a href="#/account-details"><span class="glyphicon glyphicon-dashboard"></span> My account dashboard</a></li>
+                    <li class="{{(model.viewState == 'welcome') ? 'active' : ''}}"><a href="#/welcome">Welcome</a></li>
+                    <li class="{{(model.viewState == 'rsvp') ? 'active' : ''}}"><a href="#/rsvp"><strong>RSVP</strong></a></li>
+                    <li class="{{(model.viewState == 'gifts') ? 'active' : ''}}"><a href="#/gifts">Gifts ideas</a></li>
+                    <li class="{{(model.viewState == 'venue') ? 'active' : ''}}"><a href="#/venue">Venue</a></li>
+                    <li template-if="{{model.isLoggedIn}}" class="{{(model.viewState == 'account-details') ? 'active' : '')}}"><a href="#/account-details"><span class="glyphicon glyphicon-dashboard"></span> My account dashboard</a></li>
                 </ul>
             </div>
         </div>

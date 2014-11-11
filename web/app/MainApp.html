@@ -1,8 +1,14 @@
 <!-- import polymer-element's definition -->
 <link rel="import" href="packages/polymer/polymer.html">
-<link rel="import" href="views/loginbox/LoginBox.html">
-<link rel="import" href="views/navigation/Navigation.html">
-<link rel="import" href="views/footer/Footer.html">
+<link rel="import" href="components/login/LoginBox.html">
+<link rel="import" href="components/login/NotLoggedIn.html">
+<link rel="import" href="components/navigation/Navigation.html">
+<link rel="import" href="views/welcome/Welcome.html">
+<link rel="import" href="views/gifts/Gifts.html">
+<link rel="import" href="views/rsvp/RSVP.html">
+<link rel="import" href="views/venue/Venue.html">
+<link rel="import" href="views/accountdashboard/AccountDashboard.html">
+<link rel="import" href="components/footer/Footer.html">
 
 <polymer-element name="giftkeep-main-app">
   <template>
@@ -13,8 +19,31 @@
           <giftkeep-loginbox></giftkeep-loginbox>
         </div>
       </nav>
-      <giftkeep-navigation></giftkeep-navigation>
-      <giftkeep-footer></giftkeep-footer>
+      <template if="{{model.isLoggedIn}}">
+        <giftkeep-navigation></giftkeep-navigation>
+        
+        <template if="{{model.viewState == 'welcome'}}">
+          <giftkeep-welcome></giftkeep-welcome>
+        </template>
+        <template if="{{model.viewState == 'rsvp'}}">
+          <giftkeep-rsvp></giftkeep-rsvp>
+        </template>
+        <template if="{{model.viewState == 'gifts'}}">
+          <giftkeep-gifts></giftkeep-gifts>
+        </template>
+        <template if="{{model.viewState == 'venue'}}">
+          <giftkeep-venue></giftkeep-venue>
+        </template>
+        
+        <template if="{{model.viewState == 'account-details'}}">
+          <giftkeep-account-dashboard></giftkeep-account-dashboard>
+        </template>
+        
+        <giftkeep-footer></giftkeep-footer>
+      </template>
+      <template if="{{!model.isLoggedIn}}">
+        <giftkeep-notloggedin></giftkeep-notloggedin>
+      </template>
     </div>
   </template>
   <script type="application/dart" src="MainApp.dart"></script>
