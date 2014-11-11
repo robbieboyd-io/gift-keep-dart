@@ -5,6 +5,7 @@ import 'package:polymer/polymer.dart';
 class GiftManagement extends PolymerElement 
 { 
   @published List<Map> gifts;
+  @published bool addingNew = true;
   
   GiftManagement.created() : super.created();
   
@@ -17,13 +18,37 @@ class GiftManagement extends PolymerElement
        Map map = new Map();
        map['title'] = i.toString() + ' title';
        map['from'] = 'Something!';
+       map['link'] = 'http://www.google.com/';
+       map['id'] = i.toString();
        
        gifts.add(map);
      }
+     
+     print(gifts.length);
    }
    
    void detached() {
      super.detached();
+     
+   }
+   
+   void clickAddNew(MouseEvent ev)
+   {
+     
+   }
+   
+   void clickAddThis(MouseEvent ev)
+   {
+     
+   }
+   
+   void clickCancel(MouseEvent ev)
+   {
+     
+   }
+   
+   void removeThisItem(MouseEvent ev)
+   {
      
    }
 }

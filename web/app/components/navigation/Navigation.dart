@@ -20,5 +20,18 @@ class Navigation extends PolymerElement {
      super.detached();
      
    }
+   
+   void toggleCollapsed(MouseEvent ev)
+   {
+     ButtonElement button = ev.currentTarget as ButtonElement;
+     DivElement navbar = shadowRoot.querySelector('#bs-example-navbar-collapse-1');
+     
+     if(navbar.classes.contains('in'))
+     {
+       navbar.classes.remove('in');
+     } else {
+       navbar.classes.add('in');
+     }
+   }
 }
 
